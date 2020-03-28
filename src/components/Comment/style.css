@@ -4,9 +4,9 @@
 }
 
 .comment .avatar {
-  width: 8%;
   display: flex;
   justify-content: center;
+  margin-right: 5px;
 }
 
 .comment .avatar img {
