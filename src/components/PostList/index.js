@@ -25,10 +25,6 @@ class PostList extends Component {
           }
         ]
       },
-      {
-        id: 2
-        // Restante dos dados de um novo post
-      }
     ]
   };
 
@@ -36,8 +32,7 @@ class PostList extends Component {
     return (
       <div className="post-list">
         <div className="content">
-          PostList
-        <Post />
+          <Post />
         </div>
       </div>
     )
