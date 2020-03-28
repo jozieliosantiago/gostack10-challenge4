@@ -3,22 +3,26 @@ import React from 'react';
 import Comment from '../Comment';
 import './style.css'
 
-function Post() {
+function Post({ post }) {
+  const { author, comments } = post;
+
   return (
     <div className="post">
       <div className="post-header">
         <div className="avatar">
-          <img src="https://avatars1.githubusercontent.com/u/13645242?s=60&v=4" />
+          <img src={author.avatar} />
         </div>
         <div className="post-info">
-          <p>Joziélio Santiago</p>
-          <span><small>28 Mar 2020</small></span>
+          <p>{author.name}</p>
+          <span><small>{post.date}</small></span>
         </div>
       </div>
       <div className="post-content">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum dolores provident, architecto dolor qui consequuntur sapiente molestias quisquam. Exercitationem suscipit quisquam ad fugit asperiores in quidem placeat dolorem odit quam.
+        <p>
+          {post.content}
+        </p>
       </div>
-      <Comment />
+      {comments.map(comment => <Comment key={comment.id} comment={comment} />)}
     </div>
   )
 }
